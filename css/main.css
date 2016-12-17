@@ -109,7 +109,7 @@ h1 {
   display: block;
   color: #ea4872;
   transform: scale(10);
-  opacity: 0.8;
+  opacity: 0.5;
   z-index: 3;
   font-weight: 500;
   pointer-events: none;
@@ -161,4 +161,9 @@ h1 {
 
 .hole.up .mole {
   top: 0;
+}
+
+.mole.wow {
+  transform: scale(0);
+  opacity: 0;
 }

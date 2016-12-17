@@ -85,7 +85,10 @@ function start() {
 function bonk(e) {
   if (!e.isTrusted) return;
   bonkSound.currentTime = 0;
-  this.classList.remove('up');
+  this.classList.add('wow');
+  setTimeout(() => {
+    this.classList.remove('wow');  
+  }, 300);
   if (!timeUp) {
     bonkSound.play();
     scoreBoard.classList.add('add');
