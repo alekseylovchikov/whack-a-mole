@@ -12,7 +12,7 @@ let lastHole;
 let timeUp = false;
 
 music.play();
-music.volume = 0.3;
+music.volume = 0.2;
 music.loop = true;
 
 function randomTime(min, max) {
@@ -60,7 +60,7 @@ function start() {
 
     if (score > 0) {
       showScore.classList.add('show');
-      const message = 'Your score: ' + score + (score >= 10 ? " GREAT!" : '');
+      const message = 'Your score: ' + score + (score >= 10 ? " WOW, GREAT!" : '');
       showScore.textContent = message;
     }
 
@@ -68,7 +68,9 @@ function start() {
 }
 
 function bonk(e) {
+  if (!e.isTrusted) return;
   bonkSound.currentTime = 0;
+  this.classList.remove('up');
   if (!timeUp) {
     bonkSound.play();
     scoreBoard.classList.add('add');
