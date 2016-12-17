@@ -3,14 +3,12 @@ const scoreBoard = document.querySelector('.score');
 const moles = document.querySelectorAll('.mole');
 const btnStart = document.querySelector('button');
 const bonkSound = document.querySelector('audio');
+const startScreen = document.querySelector('.start-screen');
+const showScore = document.querySelector('.show-score');
 
 let score = 0;
 let lastHole;
 let timeUp = false;
-
-function timer() {
-  // let timer = setInterval();
-}
 
 function randomTime(min, max) {
   return Math.round(Math.random() * (max - min) + min);
@@ -45,15 +43,22 @@ function start() {
   score = 0;
   scoreBoard.textContent = score;
   timeUp = false;
-  btnStart.classList.add('hide');
   scoreBoard.classList.remove('add');
+  startScreen.classList.add('hide');
 
   // start peep
   peep();
 
   setTimeout(() => {
     timeUp = true;
-    btnStart.classList.remove('hide');
+    startScreen.classList.remove('hide');
+
+    if (score > 0) {
+      showScore.classList.add('show');
+      const message = 'Your score: ' + score + (score >= 10 ? " GREAT!" : '');
+      showScore.textContent = message;
+    }
+
   }, 10000);
 }
 

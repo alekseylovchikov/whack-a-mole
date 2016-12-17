@@ -20,6 +20,42 @@ h1 {
   margin: 0.5rem 0;
 }
 
+.start-screen {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+.start-screen .splash-screen {
+  width: 300px;
+  height: 360px;
+  background: #ffd527;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transform: translate(-50%, -50%);
+}
+
+.start-screen.hide {
+  display: none;
+}
+
+.show-score {
+  display: none;
+}
+
+.show-score.show {
+  display: block;
+  font-size: 240%;
+  margin: 1rem 0;
+}
+
 .button {
   text-align: center;
   width: 100%;
