@@ -2,13 +2,18 @@ const holes = document.querySelectorAll('.hole');
 const scoreBoard = document.querySelector('.score');
 const moles = document.querySelectorAll('.mole');
 const btnStart = document.querySelector('button');
-const bonkSound = document.querySelector('audio');
+const bonkSound = document.querySelector('#bonk');
+const music = document.querySelector('#music');
 const startScreen = document.querySelector('.start-screen');
 const showScore = document.querySelector('.show-score');
 
 let score = 0;
 let lastHole;
 let timeUp = false;
+
+music.play();
+music.volume = 0.3;
+music.loop = true;
 
 function randomTime(min, max) {
   return Math.round(Math.random() * (max - min) + min);
