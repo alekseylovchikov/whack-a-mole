@@ -63,7 +63,6 @@ function start() {
       const message = 'Your score: ' + score + (score >= 10 ? " WOW, GREAT!" : '');
       showScore.textContent = message;
     }
-
   }, 10000);
 }
 
