@@ -102,13 +102,15 @@ h1 {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
+  opacity: 0.5;
 }
 
 .score.add {
   background: #ff7b00;
   color: #fff;
   transform: scale(1.3);
-  opacity: 0.8;
+  opacity: 1;
+  box-shadow: 0 12px 12px #ffd527;
 }
 
 .game {
@@ -135,6 +137,14 @@ h1 {
   position: absolute;
   z-index: 2;
   bottom: -30px;
+}
+
+.music {
+  margin: 1rem 0;
+}
+
+#on {
+  cursor: pointer;
 }
 
 .mole {

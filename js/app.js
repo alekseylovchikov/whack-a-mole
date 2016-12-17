@@ -1,3 +1,5 @@
+'use strict';
+
 const holes = document.querySelectorAll('.hole');
 const scoreBoard = document.querySelector('.score');
 const moles = document.querySelectorAll('.mole');
@@ -6,6 +8,7 @@ const bonkSound = document.querySelector('#bonk');
 const music = document.querySelector('#music');
 const startScreen = document.querySelector('.start-screen');
 const showScore = document.querySelector('.show-score');
+const musicOnBtn = document.querySelector('#on');
 
 let score = 0;
 let lastHole;
@@ -14,6 +17,19 @@ let timeUp = false;
 music.play();
 music.volume = 0.2;
 music.loop = true;
+
+function musicOff() {
+  if (music.currentTime === 0) {
+    music.play();
+    musicOnBtn.textContent = 'OFF';
+  } else {
+    music.pause();
+    music.currentTime = 0;
+    musicOnBtn.textContent = 'ON';
+  }
+}
+
+musicOnBtn.addEventListener('click', musicOff);
 
 function randomTime(min, max) {
   return Math.round(Math.random() * (max - min) + min);
