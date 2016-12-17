@@ -76,7 +76,7 @@ function start() {
 
     if (score > 0) {
       showScore.classList.add('show');
-      const message = 'Your score: ' + score + (score >= 10 ? " WOW, GREAT!" : '');
+      const message = 'Your score: ' + score + (score >= 10 ? " GREAT!" : '');
       showScore.textContent = message;
     }
   }, 10000);
