@@ -163,7 +163,7 @@ h1 {
   top: 0;
 }
 
-.mole.wow {
-  transform: scale(0);
+.hole.up .mole.wow {
   opacity: 0;
+  top: 100%;
 }
